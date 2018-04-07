@@ -16,7 +16,8 @@
 
 function env_var($name, $fallback = null)
 {
-   return array_key_exists($name, $_ENV) ? $_ENV[$name] : $fallback;
+   $env = getenv($name);
+   return false !== $env ? $env : $fallback;
 }
 
 $version = 1.3;
